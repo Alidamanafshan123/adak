@@ -1,0 +1,177 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #1A1814;
+  color: #F7F4EF;
+  font-family: sans-serif;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #111;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-logo {
+  font-size: 24px;
+  color: #B8A87A;
+  letter-spacing: 8px;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: #F7F4EF;
+  text-decoration: none;
+  font-size: 15px;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #B8A87A;
+}
+
+.nav-btn {
+  background-color: #B8A87A;
+  color: #111 !important;
+  padding: 10px 24px;
+  font-size: 14px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.nav-btn:hover {
+  background-color: #C9B98B !important;
+}
+
+h1 {
+  font-size: 48px;
+  letter-spacing: 5px;
+}
+
+.logo {
+  color: #B8A87A;
+  letter-spacing: 10px;
+}
+
+.hero {
+  text-align: center;
+  padding: 120px 20px;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+              url('khodam.jpg') center/cover no-repeat;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 14px 40px;
+  border: 1px solid #B8A87A;
+  color: #B8A87A;
+  letter-spacing: 3px;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.btn:hover {
+  background-color: #B8A87A;
+  color: #1A1814;
+}
+
+.products {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 60px 20px;
+}
+
+.card {
+  text-align: center;
+  border: 1px solid #B8A87A;
+  padding: 20px;
+  width: 280px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: transform 0.4s ease, opacity 0.6s ease, box-shadow 0.4s ease;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  border-color: #C9B98B;
+}
+
+.card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+footer {
+  text-align: center;
+  padding: 40px;
+  border-top: 1px solid #B8A87A;
+  color: #B8A87A;
+  background-color: #111;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 2px;
+  background-color: #B8A87A;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 65px;
+    left: 0;
+    right: 0;
+    background-color: #111;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .products {
+    flex-direction: column;
+    align-items: center;
+  }
+}
